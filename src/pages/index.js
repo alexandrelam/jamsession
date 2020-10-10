@@ -1,9 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
+import Header from "../components/Header"
 
-const IndexPage = () => (
-  <>
-    <h1>test</h1>
-  </>
-)
+export default function IndexPage() {
+  const [batiment, setBatiment] = useState(localStorage.getItem('batiment') || 'Lavoisier')
 
-export default IndexPage
+  return (
+    <div>
+      <Header batiment={batiment} setBatiment={setBatiment}/>
+    </div>
+  )
+}
